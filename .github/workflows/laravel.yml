@@ -29,8 +29,8 @@ jobs:
         mkdir -p database
         touch database/database.sqlite
 
-    - name: NPM install
-      run: npm install 
+    - name: node dependencies
+      run: HUSKY=0 npm ci 
     - name: Build assets/dependencies
       run: npm run build 
     - name: Execute tests (Unit and Feature tests) via PEST
