@@ -15,6 +15,20 @@ it('should be able to create a new question bigger then 255 char', function () {
     assertDatabaseCount('questions', 1);
     \Pest\Laravel\assertDatabaseHas('questions', ['question' => str_repeat('*', 260) . '?']);
 });
+it('should check if ends with question mark ?', function () {
+
+    $user = User::factory()->create();
+    actingAs($user);
+
+    $request = post(route('question.store'), [
+        'question' => str_repeat('*', 10),
+
+    ]);
+
+    $request -> assertSessionHasErrors(['question' => 'Are you sure that is a question? it is missing the question mark in the end.']);
+    assertDatabaseCount('questions', 0);
+
+});
 
 it('should have at least 10 char', function () {
     $user = User::factory()->create();
