@@ -4,14 +4,21 @@
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
+    <x-container>
+        <x-post post :action="route('question.store')">
+            <label for="question" class="block mb-2.5 text-sm font-medium text-heading dark:text-white">
+                Your question
+            </label>
+            <x-textarea></x-textarea>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __("You're logged in!") }}
-                </div>
-            </div>
+            <x-button type="submit">
+                Save
+            </x-button>
+        </x-post>
         </div>
-    </div>
+        </div>
+
+    </x-container>
+
+
 </x-app-layout>
