@@ -37,7 +37,7 @@ Interface moderna construída com **Tailwind CSS** e **Flowbite**.
 # 🛠️ Tecnologias
 
 ### Backend
-- Laravel 11
+- Laravel 12
 - PHP 8.3
 
 ### Frontend
