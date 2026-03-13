@@ -20,7 +20,7 @@
 
         <div id="accordion-collapse"
              data-accordion="collapse"
-             class="p-4 md:p-0.5 bg-gray-200 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden shadow-sm">
+             class="p-4 md:p-0.5 bg-gray-200 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden shadow-sm">
 
             <h2 id="accordion-collapse-heading-1">
                 <button type="button"
