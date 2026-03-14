@@ -1,75 +1,85 @@
 [![development](https://github.com/saitoken241/heyprofessor/actions/workflows/laravel.yml/badge.svg?branch=develop)](https://github.com/saitoken241/heyprofessor/actions/workflows/laravel.yml)
 
-# 🗳️ Question Voting System (HeyProfessor)
+# Question Voting System (HeyProfessor)
 
-Uma plataforma interativa de perguntas e respostas em tempo real, onde a comunidade decide o que é mais relevante através de votos. Ideal para sessões de **Q&A, aulas ao vivo e webinars**.
-
----
-
-# 🚀 Funcionalidades
-
-### 🔐 Autenticação Segura
-Login social exclusivo via **GitHub** utilizando Laravel Socialite.
-
-### ❓ Gestão de Perguntas
-- Criação de perguntas com limite de caracteres
-- Edição de perguntas
-- Exclusão de perguntas (somente se ainda não tiver votos ou não estiver publicada)
-
-### 👍 Sistema de Votos
-Usuários podem votar nas perguntas mais relevantes para que elas subam no ranking.
-
-### 🎤 Moderação do Host
-- Marcar perguntas como **Respondidas**
-- Arquivamento automático de perguntas respondidas
-
-### 🤖 Inteligência Artificial
-Integração com **OpenAI API** para:
-
-- Detecção semântica de perguntas duplicadas
-- Evitar spam de perguntas repetidas
-
-### 📱 Interface Responsiva
-Interface moderna construída com **Tailwind CSS** e **Flowbite**.
+An interactive real-time Q&A platform where the community decides what is most relevant through voting. Ideal for **Q&A sessions, live classes, and webinars**.
 
 ---
 
-# 🛠️ Tecnologias
+# Features
 
-### Backend
+## Secure Authentication
+Social login via **GitHub OAuth** using Laravel Socialite.
+
+## Question Management
+
+- Create questions with character limits
+- Edit questions
+- Delete questions (only if they have no votes and are not published)
+
+## Voting System
+
+Users can vote on the most relevant questions so they rise in the ranking.
+
+## Host Moderation
+
+- Mark questions as **answered**
+- Automatically archive answered questions
+
+## Artificial Intelligence
+
+Integration with the **OpenAI API** for:
+
+- Semantic detection of duplicate questions
+- Preventing repeated question spam
+
+## Responsive Interface
+
+Modern UI built with **Tailwind CSS** and **Flowbite**.
+
+---
+
+# Technologies
+
+## Backend
+
 - Laravel 12
 - PHP 8.3
 
-### Frontend
+## Frontend
+
 - Tailwind CSS
 - Flowbite
 - Vite
 
-### Autenticação
+## Authentication
+
 - Laravel Socialite
 - GitHub OAuth
 
-### Inteligência Artificial
+## Artificial Intelligence
+
 - OpenAI API
 
-### Banco de Dados
+## Database
+
 - PostgreSQL
 - MySQL
 
 ---
 
-# 📦 Instalação e Configuração
+# Installation and Setup
 
-## 1️⃣ Clone o repositório
+## 1. Clone the repository
 
 ```bash
 git clone https://github.com/saitoken241/heyprofessor.git
 cd heyprofessor
-```
+````
 
 ---
 
-## 2️⃣ Instale as dependências do PHP
+## 2. Install PHP dependencies
 
 ```bash
 composer install
@@ -77,7 +87,7 @@ composer install
 
 ---
 
-## 3️⃣ Instale as dependências do frontend
+## 3. Install frontend dependencies
 
 ```bash
 npm install
@@ -85,15 +95,15 @@ npm install
 
 ---
 
-## 4️⃣ Configure o ambiente
+## 4. Configure the environment
 
-Copie o arquivo `.env.example`:
+Copy the `.env.example` file:
 
 ```bash
 cp .env.example .env
 ```
 
-Depois gere a chave da aplicação:
+Generate the application key:
 
 ```bash
 php artisan key:generate
@@ -101,9 +111,9 @@ php artisan key:generate
 
 ---
 
-## 5️⃣ Configure o banco de dados
+## 5. Configure the database
 
-No arquivo `.env` configure:
+In the `.env` file configure:
 
 ```
 DB_CONNECTION=mysql
@@ -116,13 +126,13 @@ DB_PASSWORD=
 
 ---
 
-## 6️⃣ Execute as migrations
+## 6. Run the migrations
 
 ```bash
 php artisan migrate
 ```
 
-Opcionalmente rode os seeders:
+Optionally run seeders:
 
 ```bash
 php artisan db:seed
@@ -130,15 +140,15 @@ php artisan db:seed
 
 ---
 
-## 7️⃣ Compile os assets do frontend
+## 7. Compile frontend assets
 
-Modo desenvolvimento:
+Development mode:
 
 ```bash
 npm run dev
 ```
 
-Modo produção:
+Production build:
 
 ```bash
 npm run build
@@ -146,13 +156,13 @@ npm run build
 
 ---
 
-## 8️⃣ Inicie o servidor
+## 8. Start the server
 
 ```bash
 php artisan serve
 ```
 
-A aplicação estará disponível em:
+The application will be available at:
 
 ```
 http://localhost:8000
@@ -160,15 +170,15 @@ http://localhost:8000
 
 ---
 
-# 🔐 Configuração do Login com GitHub
+# GitHub Login Configuration
 
-1. Acesse:
+1. Go to:
 
 ```
 https://github.com/settings/developers
 ```
 
-2. Crie um **OAuth App**
+2. Create a new **OAuth App**
 
 Configure:
 
@@ -180,7 +190,7 @@ Authorization callback URL:
 http://localhost:8000/auth/github/callback
 ```
 
-Depois adicione no `.env`:
+Then add to `.env`:
 
 ```
 GITHUB_CLIENT_ID=
@@ -190,27 +200,27 @@ GITHUB_REDIRECT_URI=http://localhost:8000/auth/github/callback
 
 ---
 
-# 🤖 Configuração da OpenAI
+# OpenAI Configuration
 
-Adicione sua chave no `.env`:
+Add your API key to the `.env` file:
 
 ```
 OPENAI_API_KEY=
 ```
 
-Essa chave será usada para detectar perguntas duplicadas semanticamente.
+This key will be used to detect semantically duplicated questions.
 
 ---
 
-# 🧪 Testes
+# Tests
 
-Execute os testes automatizados:
+Run automated tests:
 
 ```bash
 php artisan test
 ```
 
-ou
+or
 
 ```bash
 ./vendor/bin/pest
@@ -218,7 +228,7 @@ ou
 
 ---
 
-# 📂 Estrutura do Projeto
+# Project Structure
 
 ```
 app/
@@ -240,55 +250,58 @@ resources/
 
 ---
 
-# 📈 Roadmap
+# Roadmap
 
-Funcionalidades planejadas:
+Planned features:
 
-- [ ] Sistema de salas
-- [ ] Atualização em tempo real com WebSockets
-- [ ] Sistema de tags
-- [ ] Notificações
-- [ ] Dashboard de analytics
-
----
-
-# 🤝 Contribuição
-
-Contribuições são bem-vindas!
-
-1. Fork o projeto
-2. Crie uma branch
-
-```bash
-git checkout -b feature/nova-feature
-```
-
-3. Commit suas mudanças
-
-```bash
-git commit -m "feat: nova funcionalidade"
-```
-
-4. Push para o repositório
-
-```bash
-git push origin feature/nova-feature
-```
-
-5. Abra um Pull Request
+* Room system
+* Real-time updates using WebSockets
+* Tag system
+* Notifications
+* Analytics dashboard
 
 ---
 
-# 📜 Licença
+# Contributing
 
-Este projeto está sob a licença **MIT**.
+Contributions are welcome.
+
+1. Fork the repository
+2. Create a new branch
+
+```bash
+git checkout -b feature/new-feature
+```
+
+3. Commit your changes
+
+```bash
+git commit -m "feat: new feature"
+```
+
+4. Push to your branch
+
+```bash
+git push origin feature/new-feature
+```
+
+5. Open a Pull Request
 
 ---
 
-# 👨‍💻 Autor
+# License
+
+This project is licensed under the **MIT License**.
+
+---
+
+# Author
 
 ken
 
 GitHub:
 
-https://github.com/saitoken241
+[https://github.com/saitoken241](https://github.com/saitoken241)
+
+Linkedin: 
+
