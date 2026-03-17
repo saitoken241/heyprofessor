@@ -20,20 +20,20 @@ class Question extends Model
     {
         return $this->hasMany(Vote::class);
     }
+    /**
+         @return Attribute<int, never>
+        public function likes(): Attribute
+        {
+            return Attribute::make(
+                get: fn () => $this->votes()->sum('like')
+            );
+        }
 
-    /** @return Attribute<int, never> */
-    public function likes(): Attribute
-    {
-        return Attribute::make(
-            get: fn () => $this->votes()->sum('like')
-        );
-    }
-
-    /** @return Attribute<int, never> */
-    public function unlikes(): Attribute
-    {
-        return Attribute::make(
-            get: fn () => $this->votes()->sum('unlike')
-        );
-    }
+         @return Attribute<int, never>
+        public function unlikes(): Attribute
+        {
+            return Attribute::make(
+                get: fn () => $this->votes()->sum('unlike')
+            );
+        } */
 }

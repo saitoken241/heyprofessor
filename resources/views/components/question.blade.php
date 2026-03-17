@@ -13,7 +13,7 @@ items-center justify-between">
 
             <x-post :action="route('question.like', $question)"><button class="flex items-center space-x-1 text-green-500">
                <x-icons.thumbs-up class="w-4 h-4 text-green-600"/>
-           <span> {{ $question->likes }} </span>
+           <span> {{ $question->votes_sum_like ?: 0 }} </span>
             </button>
             </x-post>
         </div>
@@ -22,7 +22,7 @@ items-center justify-between">
             <x-post :action="route('question.unlike', $question)"><button class="flex items-center space-x-1 text-red-500">
 
                 <x-icons.thumbs-down class="w-4 h-4 text-red-600"/>
-                <span> {{ $question->unlikes }} </span>
+                <span> {{ $question->votes_sum_unlike ?: 0 }} </span>
             </button>
             </x-post>
         </div>
