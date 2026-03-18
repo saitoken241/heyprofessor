@@ -15,10 +15,16 @@ class Question extends Model
      */
     use HasFactory;
 
+    protected $casts = [
+
+        'draft' => 'boolean',
+    ];
+
     /** @return HasMany<Vote, $this> */
     public function votes(): HasMany
     {
         return $this->hasMany(Vote::class);
+
     }
     /**
          @return Attribute<int, never>
