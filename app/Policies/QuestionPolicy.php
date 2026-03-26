@@ -16,4 +16,11 @@ class QuestionPolicy
 
     }
 
+    public function destroy(User $user, Question $question): bool
+    {
+
+        return $question->createdBy()->is($user);
+
+    }
+
 }

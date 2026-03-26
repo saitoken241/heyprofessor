@@ -1,3 +1,13 @@
-<div>
-    <!-- Walk as if you are kissing the Earth with your feet. - Thich Nhat Hanh -->
-</div>
+@props(['action', 'put' => false, 'delete' => false])
+
+<form method="POST" action="{{ $action }}">
+    @csrf
+
+    @if($put)
+        @method('PUT')
+    @elseif($delete)
+        @method('DELETE')
+    @endif
+
+    {{ $slot }}
+</form>
