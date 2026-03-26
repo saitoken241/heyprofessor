@@ -1,14 +1,27 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Vote for a question') }}
+            {{ __('My Questions') }}
         </h2>
     </x-slot>
     <x-container>
+        <x-post post :action="route('question.store')">
+            <label for="question" class="block mb-2.5 text-sm font-medium text-heading dark:text-white">
+                Your question
+            </label>
+            <x-textarea></x-textarea>
+
+            <x-button type="submit">
+                Save
+            </x-button>
+        </x-post>
+        <hr class="border-gray-700 border-dashed my-4">
+
 
         <div id="accordion-collapse"
              data-accordion="collapse"
              class="p-4 md:p-0.5 bg-gray-200 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden shadow-sm">
+
             <h2 id="accordion-collapse-heading-1">
                 <button type="button"
                         class="uppercase font-bold mb-1 flex items-center justify-between w-full p-5
@@ -21,7 +34,7 @@
                         aria-expanded="true"
                         aria-controls="accordion-collapse-body-1">
 
-                    <span>Questions</span>
+                    <span>Lista de perguntas</span>
 
                     <svg data-accordion-icon
                          class="w-5 h-5 rotate-180 shrink-0 text-gray-500 dark:text-gray-400"
@@ -45,7 +58,7 @@
 
                     <div class="text-gray-700 dark:text-gray-300 space-y-3">
 
-                        @foreach($questions as $item)
+                        @foreach($question as $item)
                             <x-question :question="$item"></x-question>
                         @endforeach
 

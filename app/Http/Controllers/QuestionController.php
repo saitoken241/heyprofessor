@@ -3,10 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Rules\EndWithQuestionMarkRule;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 
 class QuestionController extends Controller
 {
+    public function index(): View
+    {
+        return view('question.index', [
+            'question' => auth() -> user() -> questions,
+
+        ]);
+    }
+
     public function store(): RedirectResponse
     {
 
