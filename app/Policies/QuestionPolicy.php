@@ -3,6 +3,7 @@
 namespace App\Policies;
 
 use App\Models\{Question, User};
+use Illuminate\View\View;
 
 class QuestionPolicy
 {
@@ -14,6 +15,11 @@ class QuestionPolicy
 
         return $question->createdBy()->is($user);
 
+    }
+
+    public function update(User $user, Question $question): bool
+    {
+        return $question->draft;
     }
 
     public function destroy(User $user, Question $question): bool
