@@ -41,6 +41,14 @@ class QuestionController extends Controller
 
     }
 
+    public function update(Question $question): RedirectResponse
+    {
+        $question->question = request()->question;
+        $question->save();
+
+        return back();
+    }
+
     public function edit(User $user, Question $question): \Illuminate\View\View
     {
         $this->authorize('update', $question);
