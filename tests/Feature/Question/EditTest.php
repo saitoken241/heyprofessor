@@ -26,7 +26,7 @@ it('should return a view', function () {
 
 });
 
-it('should make sure that only question with satus DRAFT can be edited ', function () {
+it('should make sure that only question with status DRAFT can be edited ', function () {
 
     $user             = User::factory()->create();
     $QuestionNotDraft = Question::factory()->for($user, 'createdBy')->create(['draft' => false]);
