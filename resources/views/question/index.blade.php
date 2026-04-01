@@ -9,7 +9,7 @@
             <label for="question" class="block mb-2.5 text-sm font-medium text-heading dark:text-white">
                 Your question
             </label>
-            <x-textarea></x-textarea>
+            <x-textarea name="question"></x-textarea>
 
             <x-button type="submit">
                 Save
@@ -82,6 +82,8 @@
                                             <button type="submit" class="hover:underline text-blue-500"> publicar
                                             </button>
                                         </x-form>
+
+                                        <a href="{{ route('question.edit', $item) }}" class="hover:underline text-blue-500">editar</a>
 
                                     </x-table.td>
                                 </x-table.tr>
