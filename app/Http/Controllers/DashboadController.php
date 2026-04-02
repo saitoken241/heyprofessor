@@ -11,7 +11,7 @@ class DashboadController extends Controller
     {
 
         return view('dashboard', [
-            'questions' => Question::withSum('votes', 'like')->withSum('votes', 'unlike')->get(),
+            'questions' => Question::withSum('votes', 'like')->withSum('votes', 'unlike')->paginate(5),
 
         ]);
     }

@@ -49,6 +49,7 @@
                             <x-question :question="$item"></x-question>
                         @endforeach
 
+                        {{ $questions->links() }}
                     </div>
 
                 </div>
