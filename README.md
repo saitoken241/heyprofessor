@@ -303,5 +303,4 @@ GitHub:
 
 [https://github.com/saitoken241](https://github.com/saitoken241)
 
-Linkedin: 
 
